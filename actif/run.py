@@ -33,7 +33,7 @@ def run_experiment(cfg: SyntheticConfig, wf: WalkForward, cost_bp: float):
     return table, preds, y, vol
 
 
-def plot(preds, y, cost_bp, out: Path):
+def make_figure(preds, y, cost_bp):
     fig, axes = plt.subplots(2, 1, figsize=(10, 8), sharex=True)
     for name, p in preds.items():
         yy = y.loc[p.index]
@@ -48,6 +48,11 @@ def plot(preds, y, cost_bp, out: Path):
     axes[1].set_title("Corrélation prévision / réalisé, glissante sur 250 jours")
     axes[0].legend()
     fig.tight_layout()
+    return fig
+
+
+def plot(preds, y, cost_bp, out: Path):
+    fig = make_figure(preds, y, cost_bp)
     fig.savefig(out, dpi=120)
     plt.close(fig)
 

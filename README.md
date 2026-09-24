@@ -59,7 +59,10 @@ python -m actif.run                    # une série + placebo → resultats/
 python -m actif.run --r2 0.005 --cost-bp 5   # signal plus faible, coûts plus élevés
 python -m actif.robustesse             # 10 graines (~1 min)
 python -m pytest                       # tests de non-fuite, protocole, placebo
+streamlit run app.py                   # démo interactive dans le navigateur
 ```
+
+La démo permet de régler la force du signal, les coûts de transaction et la graine, puis affiche les métriques, le graphique et le contrôle placebo.
 
 ## Limites
 

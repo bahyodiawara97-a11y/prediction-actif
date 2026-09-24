@@ -34,7 +34,7 @@ class SyntheticConfig:
     seed: int = 0
 
 
-# E[tanh(Z)^2] pour Z ~ N(0,1) : normalise le momentum à variance ~1
+# Écart-type de tanh(Z) pour Z ~ N(0,1) : normalise le momentum à variance ~1
 _TANH_STD = 0.6278
 
 
